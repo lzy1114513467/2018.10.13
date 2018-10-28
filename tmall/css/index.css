@@ -1,0 +1,83 @@
+.top-con{
+    background: rgb(61, 51, 208)url("../img/top-img.jpg")no-repeat center;
+    display: block;
+    height: 80px;
+}
+#login-window{
+    float: left;
+}
+#navigation-menu{
+    float: right;
+}
+#navigation-menu > li{
+    float: left;
+    padding: 0 14px;
+    cursor: pointer;
+}
+#login-window a{
+    margin-left: 10px;
+}
+#header{
+    height: 32px;
+    background-color: #f2f2f2;
+    line-height: 32px;
+}
+#header span,#navigation-menu a,#login-window a{
+    color: #999999;
+    font-size: 12px;
+}
+#login-window a:hover,#navigation-menu li:hover a{
+    color:#fe0035 ;
+}
+#navigation-menu #solid{
+    width: 2px;
+    height:12px;
+    background-color: #cccccc;
+    margin: 10px;
+    padding: 0px;
+}
+#navigation-menu .iconfont{
+    color: #fe0035;
+}
+ul .block:hover{
+    background-color: white;
+}
+.block{
+     position: relative;
+ }
+.triangle{
+    width: 0px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #999999;
+    float: right;
+    top: 50%;
+    right: 5px;
+    position: absolute;
+}
+.block:hover .triangle{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    -webkit-transform-origin: 3px 1.5px;
+    -moz-transform-origin: 3px 1.5px;
+    -ms-transform-origin: 3px 1.5px;
+    -o-transform-origin: 3px 1.5px;
+    transform-origin: 3px 1.5px;: px;
+
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+}
+.menu{
+    position: absolute;
+}
+.submenu{
+
+}

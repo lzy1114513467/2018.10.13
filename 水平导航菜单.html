@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天猫</title>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #abc{
+            width:2300px;
+        }
+        .menu{
+            list-style: none;
+            background-color: red;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #abc > li{
+            float: left;
+            margin: 5px;
+        }
+        ul > li a{
+            text-decoration: none;
+            display: block;
+        }
+        /*ul > li a hover{*/
+            /*background-color: #cccccc;*/
+        /*}*/
+        /*?????????????????????*/
+        ul > li:hover{
+            background-color: #cccccc;
+        }
+        #submeun{
+            list-style: none;
+            display: none;
+
+            /*???????????????*/
+        }
+        #submeun li:hover{
+            cursor: pointer;
+        }
+        #submeun li:hover{
+            background-color: aqua;
+        }
+        /*#submeun > li:hover {*/
+               /*display: block;*/
+           /*}*/
+
+        #abc .menu:hover #submeun{
+            display: block;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<ul id="abc">
+    <li class="menu"><a href="">菜单一</a></li>
+    <li class="menu"><a href="">菜单二</a></li>
+    <li class="menu"><a href="">菜单三</a>
+    <!--ul.submenu>li{子菜单$}*4-->
+        <ul id="submeun">
+            <li>子菜单1</li>
+            <li>子菜单2</li>
+            <li>子菜单3</li>
+            <li>子菜单4</li>
+        </ul>
+    </li>
+    <li class="menu"><a href="">菜单四</a></li>
+</ul>
+</body>
+</html>
