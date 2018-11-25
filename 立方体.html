@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: black;
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+
+        }
+        .div{
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, .6);
+            border: 1px solid white;
+            font-size: 80px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .contain{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 200px;
+            left: 500px;
+            transform-style: preserve-3d;
+            animation: rotate 3s linear infinite;
+        }
+        .div1{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .div2{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .div3{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .div4{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .div5{
+            transform: rotateZ(-180deg) translateZ(100px);
+        }
+        .div6{
+            transform: translateZ(-100px);
+        }
+        @keyframes rotate {
+
+            to{
+                transform: rotateY(360deg);
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="div div1"><img src="imgs" alt=""></div>
+    <div class="div div2">2</div>
+    <div class="div div3">3</div>
+    <div class="div div4">4</div>
+    <div class="div div5">5</div>
+    <div class="div div6">6</div>
+</div>
+</body></html>

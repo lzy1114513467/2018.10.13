@@ -5,6 +5,8 @@
 }
 #login-window{
     float: left;
+    /*height: 32px; 为什么不好使*/
+    margin-bottom: -1.6px;
 }
 #navigation-menu{
     float: right;
@@ -44,6 +46,7 @@ ul .block:hover{
 }
 .block{
      position: relative;
+
  }
 .triangle{
     width: 0px;
@@ -77,7 +80,222 @@ ul .block:hover{
 }
 .menu{
     position: absolute;
+    left: -1px;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-color: #eeeeee;
+    background-color: #ffffff;
+    width: 74px;
+    padding: 0 14px;
 }
 .submenu{
+    font-size: 12px;
+    color: #999999;
+    width: 72px;
+    display: none;
+}
+#navigation-menu .block:hover .submenu{
+    display: block;
+}
+#navigation-menu .submenu:hover{
+    text-decoration: underline;
+}
+/*header结束*/
+
+#logo-search{
+    margin-top: 4px;
+    height: 135px;
+}
+
+#logo{
+    float: left;
+}
+#search{
+    float: left;
+    margin-top: 38px;
+    margin-left: 12px;
+    position: relative;
+    width: 800px;
+}
+#search-box{
+    width: 625px;
+    height: 36px;
+    border: 2px solid #FF0036;
+    font-size: 18px;
+    text-indent: 10px;
+    outline: none;
+}
+#search-button{
+    width: 128px;
+    height: 36px;
+    background-color: #FF0036;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #fff;
+    border: none;
+    outline: none;
+    position: absolute;
+    left: 500px;
+    top: 2px;
+}
+.hot-search{
+    float: left;
+    padding: 0 12px;
+    font-size: 14px;
+    border-right: 1px solid #999999;
+}
+.hot-search a{
+    color: #999;
+}
+.highhot a{
+    color: #FF0036;
+}
+#nav li{
+    float: left;
+    padding: 0 8px;
+}
+#nav li> a{
+    color: #333;
+}
+#nav li:hover a{
+    color: #FF0036
+}
+#nav{
+    margin-left: 200px;
+    height: 36px;
+    line-height: 36px;
+}
+.img-nav{
+    width: 100px;
+    margin-top: 3px;
+}
+#banner .wrapper{
+    text-align: center;
+    background: #6934ff;
+    position: relative;
+}
+
+#banner .category-tab{
+    position: absolute;
+    top: -36px;
+    left: 0;
+    width: 200px;
+    height: 500px;
+    background: rgba(0,0,0,.55);
 
 }
+#banner .category-item{
+    float: left;
+}
+
+#banner .category-item > a{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+}
+
+#banner .category li{
+    height: 36px;
+}
+
+#banner .category{
+    display: none;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 200px;
+}
+
+#banner .category-item:hover .category{
+    display: block;
+}
+
+#banner .item1{
+    width: 100px;
+    color: #FF0036;
+    background: rgba(238,238,238,.95);
+}
+
+#banner .item2{
+    background: #FF0036;
+    color: #ffe013;
+    width: 100px;
+}
+
+#banner .category a{
+    color: #fff;
+}
+
+#banner .category11{
+    /*display: block;*/
+}
+#banner .category11 li{
+    width: 152px;
+    height: 31px;
+    border: 1px solid #FF0036;
+    border-radius: 10px;
+    line-height: 31px;
+    margin: 20px auto
+}
+
+#banner .small-banner{
+    width: 220px;
+    height: 235px;
+    background: rgba(255,255,255,.7);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#banner .slider-nav li{
+    width: 25px;
+    height: 5px;
+    background: #000;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#banner .slider-nav{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 30px;
+}
+
+#side-bar{
+    width: 35px;
+    background: #000000;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+#side-bar .iconfont{
+    color: #fff;
+}
+
+#side-bar .chart{
+    margin-top: 200px;
+    position: relative;
+}
+
+#side-bar .vip{
+    color: #fff;
+    width: 90px;
+    height: 36px;
+    background: #494949;
+    text-align: center;
+    line-height: 36px;
+    position: absolute;
+    left: -200px;
+    top: -8px;
+    opacity: 0;
+}
+
+#side-bar .chart:hover .vip{
+    left: -90px;
+}
+
