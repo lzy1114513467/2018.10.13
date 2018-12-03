@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        #container{
+            width: 300px;
+            height: 300px;
+            border:solid 1px  black;
+            margin: 100px auto;
+        }
+        #menu{
+            width: 300px;
+            height: 30px;
+            border-bottom: solid 1px black;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 99px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: #cccccc;    
+            border-right:solid 1px black ;
+        }
+        #content div{
+            display: none;
+        }
+        
+        #menu .tap-selected{
+            background:black;
+            color: white;
+        }
+        #content .content-selected{
+            display: block
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="menu">
+                <li class="tap-selected">html</li>
+                <li>css</li>
+                <li>javascript</li>
+            </ul>
+            <div id="content">
+                <div class="content-selected">001</div>
+                <div>002</div>
+                <div>003</div>
+            </div>
+    </div>
+    
+    <script>    
+    var omenu = document.getElementById('menu');
+    var ali = omenu.getElementsByTagName('li');
+    var ocontent = document.getElementById('content');
+    var adiv = ocontent.getElementsByTagName('div');
+
+        for(var i=0;i<ali.length;i++){
+            ali[i].index = i;
+            ali[i].onclick = function(){
+              /*  ali[i].style.background = 'red';*/
+             //this.style.background = '#000';
+              //this.style.color = '#fff';
+              for(var j=0;j<ali.length;j++){
+                  ali[j].className = '';
+                  adiv[j].className= '';
+              }
+              this.className = 'tap-selected';
+              adiv[this.index].className = 'content-selected';
+
+
+            }
+        }
+    </script>
+</body>
+</html>

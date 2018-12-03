@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65f7043b-2f58-485e-b0a5-53cc5ce30e0a" name="Default" comment="today is 2018.10.13">
-      <change afterPath="$PROJECT_DIR$/jsbhsaj.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/右键菜单.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js.html" beforeDir="false" afterPath="$PROJECT_DIR$/js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmall/js习题/123.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmall/js习题/123.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="右键菜单.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/右键菜单.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="453">
+              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -199,7 +196,7 @@
       <workItem from="1542185561634" duration="1836000" />
       <workItem from="1542510629957" duration="8391000" />
       <workItem from="1543146330737" duration="679000" />
-      <workItem from="1543653256618" duration="1599000" />
+      <workItem from="1543653256618" duration="2153000" />
     </task>
     <task id="LOCAL-00001" summary="today is 2018.10.13">
       <created>1539420417896</created>
@@ -212,11 +209,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123139000" />
+    <option name="totallyTimeSpent" value="123693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="762" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30604026" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -543,8 +539,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/右键菜单.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        <state relative-caret-position="453">
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
         </state>
       </provider>
     </entry>

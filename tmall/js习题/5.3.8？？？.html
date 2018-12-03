@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+    body{
+        height: 2000px;
+    }
+    </style>
+    
+<body >
+    <h1>历史</h1>
+    <button id='butto'>返回</button>
+    <script>
+        var obutton=document.getElementById('butto'); /*这是定义一个对象 obutton*/
+        /* 这是document下面的一个对象 后面是对象的方法 是通过id获取元素的*/
+               console.log(obutton);
+        obutton.onclick= function(){
+        // console.log(123);
+        //history.back();     }
+    /*var num=0;
+    var timer=setInterval(function(){
+        console.log(num++);
+        if(num>5){
+            clearInterval(timer)
+        }
+    },1000)
+    console.log(typeof timer);*/
+
+    /*var num=0;
+    setTimeout(function(){
+        console.log(num++);
+    },1000);*/
+
+
+    /*var num=0
+    function timer(){
+        setTimeout(function(){
+        console.log(num++);
+    },1000);
+    }
+
+    for(var i=0;i<=5;i++){
+        timer(i)
+    }        */     /*为什么没有实现延时输出的功能*/
+
+    /*var num=0;
+    function yanshi(){
+        console.log(num++);
+        setTimeout(yanshi,1000);
+    }
+    yanshi();   /*这里的（）为什么不能加，不加括号就不是方法*/
+
+
+    </script>
+</body>
+</html>
