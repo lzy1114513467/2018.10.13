@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    #menu li{
+        background: white;
+        width: 100px;
+        height: 30px;
+        list-style: none;
+        text-align: center;
+        line-height: 30px;
+        border-bottom: 1px dashed;
+        
+    }
+    #menu{
+        width: 100px;
+        border: 1px solid ;
+        display: none;
+        position: absolute;
+    }
+    #menu li:hover {
+        cursor: pointer;
+        background: #cccccc;
+    }
+
+</style>
+<body>
+    <ul id="menu">
+        <li>菜单一</li>
+        <li>菜单二</li>
+        <li>菜单三</li>
+        <li>菜单四</li>
+        <li>菜单五</li>
+    </ul>
+
+    <script>
+    var omenu=document.getElementById('menu');
+    var oli=omenu.getElementsByTagName('li');
+
+    document.oncontextmenu = function(e){
+        e = e|| window.event;
+        omenu.style.left = e.clientX + 'px';
+        omenu.style.top = e.clientY + 'px';
+        omenu.style.display='block'; 
+       // e.preventDefault();       /*阻止默认行为*/
+        return false     /*另外一种写法？？*/
+          }
+        document.onclick = function (){
+        omenu.style.display = 'none';   /*用classname？？、？*/
+    }
+    for(var i=0;i<oli.length;i++){
+        oli[i].onclick = function(){
+            for(var j=0;j<oli.length;j++){
+                oli.style.background = '#ccc';
+            }
+            this.style.background = 'red';
+        }
+    }
+    
+
+    </script>
+</body>
+</html>

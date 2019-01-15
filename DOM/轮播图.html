@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+         #warpper{
+             width: 520px;
+             height: 280px;
+             margin :100px auto;
+             position: relative;           /*子元素要绝对定位  父元素先相对定位*/
+            
+        }
+        #square{
+            width: 100px;
+            height: 10px;
+            position: absolute;
+            top: 260px;
+            left: 380px;
+            z-index: 999;
+            
+        }
+        #square li {
+            list-style: none;
+            float: left;
+            height: 10px;
+            width: 15px;
+            background: #ccc;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #arrows span{
+            width: 20px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            background: #ccc;
+            cursor: pointer;
+        }
+        #arrows {
+            position: absolute;
+            top: 250px;
+            left: 30px;
+        }
+        #square li:hover{
+            background: black;
+        }
+       
+        #imgs div{
+            display: none;
+        }
+        .img-selected{
+            display: block;
+        }
+        #imgs .img-selected{
+            display: block;
+            z-index: 11;
+        }
+        #square .tab-selected{
+            background: black;
+        }
+                    /*container 先定位*/
+    </style>
+</head>
+<body>
+    <div id='warpper'>
+        <ul id='square'>
+        <li class="tab-selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id='imgs'>
+        <div class="img-selected"><img  src="img/1.jpg" alt="" ></div>
+        <div ><img src="img/2.jpg" alt="" ></div>
+        <div ><img src="img/3.jpg" alt="" ></div>
+        <div ><img src="img/4.jpg" alt="" ></div>
+    </div>
+    <div id="arrows">
+        <span id="left">&lt;</span>
+        <span id="right">&gt;</span>
+    </div>
+    </div>
+    
+    <script>
+    var osquare=document.getElementById('square');
+    var oli = osquare.getElementsByTagName('li');
+    var oimgs = document.getElementById('imgs');
+    var odiv = oimgs.getElementsByTagName('div');
+    var oleft = document.getElementById('left');
+    var oright = document.getElementById('right');
+    var nowIndex =0;
+    var timer ;
+    var warpper = document.getElementById('warpper');
+
+
+
+    for(var i=0;i<oli.length;i++){
+        oli[i].index = i;
+
+        oli[i].onmouseover = function(){
+
+        for(var j=0;j<oli.length;j++){
+            oli[j].className= '';
+            odiv[j].className='';
+        }
+         
+        this.className = 'tab-selected';
+        odiv[this.index].className = 'img-selected';
+        nowIndex = this.index;
+        }
+    }
+    oleft.onclick = oright.onclick =function(){             /*这儿要注意绑定事件*/
+        if(this===oright){
+            nowIndex++;
+        }else{
+            nowIndex--;
+        }
+        if(nowIndex==-1){
+            nowIndex=odiv.length-1;  /*注意这儿是-1*/
+        }
+        if(nowIndex==odiv.length){
+            nowIndex=0;        
+        }
+        for(var j=0;j<oli.length;j++){
+            oli[j].className= '';
+            odiv[j].className='';
+        }
+         
+        oli[nowIndex].className = 'tab-selected';
+        odiv[nowIndex].className = 'img-selected';
+    }
+
+    oleft.onselectstart = oright.onselectstart = function(){
+        return false;
+    }
+
+    //定时器功能
+    timer = setInterval(function(){
+        oright.onclick()
+    },1000);
+    warpper.onmouseover = function(){
+        clearInterval(timer);
+    };
+    warpper.onmouseout = function(){
+        timer = setInterval(function(){
+        oright.onclick()
+    },1000);
+    }
+    
+
+    </script>
+</body>
+</html>

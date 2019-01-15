@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div>
+        <div class="slider-panner sp-1 active">
+          <div>
+              <img src="https://img.alicdn.com/simba/img/TB1fN3WA7CWBuNjy0FaSutUlXXa.jpg" alt="">
+          </div>
+        </div>
+        <div class="slider-panner sp-2">
+            <div>
+                <img src="https://img.alicdn.com/tps/i4/TB1o_JiAVOWBuNjy0FiSutFxVXa.jpg" alt="">
+            </div>
+        </div>
+        <div class="slider-panner sp-3">
+            <div>
+                <img src="https://img.alicdn.com/simba/img/TB114X1gBjTBKNjSZFuSuv0HFXa.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="list-btn">
+      <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <script src="./jquery-3.3.1.min.js"></script>
+  <script>
+    var nowIndex = 0;
+    var timer = null;
+    $(".list-btn li").mouseover(function(){
+      $(this).add($(".slider-panner").eq($(this).index())).addClass("active").siblings().removeClass("active");
+    })
+    function run(){
+      timer = setInterval(function(){
+        nowIndex++;
+        if(nowIndex==3)nowIndex=0;
+        $($(".list-btn li")).eq(nowIndex).triggerHandler("mouseover");
+      },1000)
+    }
+    $(".slider").hover(function(){
+      clearInterval(timer)
+    },function(){
+      run();
+    })
+    run();
+  </script>
+</body>
+</html>

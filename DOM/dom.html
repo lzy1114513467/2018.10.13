@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ 
+</head>
+<body>
+    <div id="taday">今天星期五</div>
+    <select name="" id="school">
+        <option value="">农大</option>
+        <option value="">林大</option>
+        <option value="">黑大</option>
+    </select>
+
+    <script>
+        var oDiv1 = document.getElementById('taday');
+        var oschool = document.getElementById('school');
+        //var oDiv1 = document.getElementById('taday');
+       // var oDiv1 = document.getElementById('taday');
+      /*  var olist=document.getElementById('list');
+
+        var oli= olist.getElementsByTagName('li');*/
+      //  console.log(oli);
+      oDiv1.onclick = function(){
+        console.log(123);
+    };
+    oschool.onchange = function(){
+        console.log('onchange');
+    };
+    </script>
+</body>
+</html>

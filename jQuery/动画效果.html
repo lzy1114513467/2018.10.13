@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color:red;
+    }
+    </style>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./jquery.easing.1.3.js"></script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <button id="btn2">按钮</button>
+    <button id="stop">stop</button>
+    <div id="box"></div>
+
+
+    <script>
+    $("#btn").click(function(){
+        $("#box").animate({width:400,height:400},5000,"easeInOutExpo");
+        $("#box").animate({width:200,height:200},5000);
+    })
+    $("#stop").click(function(){
+        $("#box").stop(false,true);
+    })
+    /*$("#btn2").click(function(){
+        $("#box").animate({width:200,height:200},1000)
+        
+    })*/
+    </script>
+</body>
+</html>
