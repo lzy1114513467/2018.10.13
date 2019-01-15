@@ -10,11 +10,16 @@
     *{
         margin:0px;
     }
-
+    hr{
+        background: rgba(0, 0, 0, 0.12);
+        border: 0;
+        height: 1px;
+    }
     .container{
         height: 100vh;
         position: relative;
-        border: solid 1px ;
+        border: solid 1px  #cccccc ;
+        position: fixed;
     }
     #menu{
         padding: 24px;
@@ -32,7 +37,7 @@
         padding: 0px;
         margin: 0 20px;
         position: absolute;
-        right:25px;
+        right:18px;
     }
     #content{
         
@@ -44,18 +49,50 @@
         left: 10%;
         
     }
+    .boot{
+        transform: translate(-50% -50%);
+        position: absolute;
+        top: 60%;
+        left: 30%;
+    }
+    .bootlist a,.liboot a{
+        text-decoration: none;
+        color: #00A862;
+        cursor: pointer;
+        padding: 20px;
+    }
     .list{
         position: absolute;
         left:84px; 
         top: 140px;
-        display: none;
+        /* display: none; */
+        opacity: 0;
+        transform: scale(1.2);
+        transition: all .1s ease;
     }
     .list li{
         list-style: none;
         font-weight: 700;
         font-size: 1.1rem;
         padding: 10px;
+    
 
+    }
+    .liboot{
+        font-size: 1rem;
+        font-weight: 100;
+    }
+    .bootlist2,.lilist2{
+        border: 1px solid #00A862;
+        border-radius: 48px;
+        padding: 3px 0;
+        
+    }
+    .bootlist2 a,.lilist2 a{
+        padding: 10px;
+    }
+    .logo2{
+        display: none;
     }
     @media(min-width:1024px){
         .container{
@@ -71,8 +108,22 @@
             left: 10px;
             top: 100px;
         }
+        .boot{
+            left: 30px;
+            top: 150px
+            
+        }
     }
     @media(max-width:630px){
+        .boot{
+            display: none;
+        }
+        .logo{
+            display: none;
+        }
+        .logo2{
+            display: block;
+        }
         .barss {
             display: none;
         }
@@ -89,13 +140,41 @@
         }
 
     }
-    #img1{
+    img{
         width: 36px;
         position: relative;
         bottom: 5px;
     }
+    .bar img{
+        width: 24px;
+        position: absolute;
+        bottom: -5px;
+    }
+    .barsss img{
+        width: 18px;
+        position: absolute;
+        left: 14px;
+        top: 7px;
+
+    }
+    .liboot{
+        position: relative;
+    }
+    .boot img,.liboot img{
+        position: absolute;
+        width: 28px;
+        top: -3px;
+        left: -12px;
+    }
+    .barsss{
+        display: none;
+
+    }
+
     .listActive{
-        display: block;
+        /* display: block; */
+        opacity: 1;
+        transform: scale(1);
     }
     /* .active{
         background: red;
@@ -104,17 +183,54 @@
         opacity: 0;
 
     }
+    
+    #container2{
+        position: relative;
+        left: 30vw;
+        width: 70vw;
+
+    }
+    .pics1{
+        width: 70vw;
+    }
+    .pics2{
+        width: 70vw;
+        height: 14vw;
+        display: flex;
+
+    }
+    .pics2 img{
+        width: 22vw;
+        padding:12px;
+    }
+    #club{
+        width: 60vw;
+        height: 18vw;
+        background: #cccccc;
+        margin: 0 auto;
+    }
+    #club div{
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
     </style>
     <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div class="container">
          <div id="menu">
-        <div id="img1" class="submenu "><img src="./logo.svg" alt=""></div>
+        <div  class="submenu logo logo2"><img src="./logo.svg" alt=""></div>
+        <div  class="submenu logo "><img src="./logo.svg" alt=""></div>
         <div class="submenu bars barss">门店</div>
         <div class="submenu bars barss">我的账户</div>
         <div class="submenu bars barss">菜单</div>
-        <div class="submenu bar  barss"><img src="./icon-hamburger.svg" alt=""></div>
+        <div>   
+        <div class="submenu bar  barss barsss2"><img src="./icon-hamburger.svg" alt=""></div>
+        <div class="submenu bar  barss barsss"><img src="./icon-close.svg" alt=""></div>
+        </div>
+        
+        
     </div>
      <div id="content">
         心情惬意，来杯咖啡吧☕
@@ -124,6 +240,9 @@
            <li>门店</li>
            <li>心享俱乐部</li>
            <li>菜单</li>
+           <li>
+               <hr>
+           </li>
            <li>星巴克移动应用</li>
            <li>星礼卡</li>
            <li>星巴克甄选</li>
@@ -132,11 +251,53 @@
            <li>关于星巴克</li>
            <li>帮助中心</li>
            <li>上红烘焙工坊</li>
-       </ul>
+           <li>
+               <hr>
+           </li>
+            <li>
+                <div class="liboot">
+                    <img src="./icon-account.svg" alt="">
+                    <span class="lilist lilist1"><a href="">登录</a></span>
+                    <span class="lilist lilist2"><a href="">注册</a></span>
+                </div>
+            </li>
+            </ul>
+       
+   </div>
+   <div class="boot"> 
+        <img src="./icon-account.svg" alt=""> 
+       <span class="bootlist bootlist1"><a href="">登录</a></span>
+       <span class="bootlist bootlist2"><a href="">注册</a></span>
    </div>
     </div>
-   
-   
+    <div id="container2">
+   <div id="pics">
+        <img class="pics1" src="./kv-0.jpg" alt="">
+        <div class="pics2">   
+            <img src="./starbucks-tmall-0108-cn.jpg" alt="">
+            <img src="./starbucks-design-studio-web-china.jpg" alt="">
+            <img src="./homepage-career-cn.jpg" alt="">
+        </div>
+   </div>
+   <div id="club">
+        <div>
+            <ul>
+            <li>星享俱乐部</li>
+            <li>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="">了解更多</a></li>
+            <li>
+                <div>
+                    <span><a href="">注册</a></span>
+                    <span><a href="">登录</a></span>
+                </div>
+            </li>
+        </ul>
+        </div>
+        <div>
+
+        </div>
+   </div>
+    </div>
+
 
 
 
@@ -144,12 +305,17 @@
 
     <script>
     $(".bar").click(function(){
-        $(this).html('<img src="./icon-close.svg" alt="">');        
+        $(this).hide();
+        $(".barsss").show()
         $(".list").toggleClass("listActive");
         $("#content").toggleClass("contentactive");
         $(".bars").toggleClass("contentactive");
+        $(".boot").toggleClass("contentactive");
     })
-    
+    $(".barsss").click(function(){
+        $(this).hide();
+        $(".barsss2").show();
+    })
     </script>
 </body>
 </html>
