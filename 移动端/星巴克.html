@@ -18,8 +18,9 @@
     .container{
         height: 100vh;
         position: relative;
-        border: solid 1px  #cccccc ;
+        border-right: solid 1px#f7f7f7 ;
         position: fixed;
+        z-index: 2;
     }
     #menu{
         padding: 24px;
@@ -113,6 +114,9 @@
             top: 150px
             
         }
+        .container2{
+            width: 100%;
+        }
     }
     @media(max-width:630px){
         .boot{
@@ -137,6 +141,9 @@
         }
         .list{
             left: 20px;
+        }
+        .logo2{
+            display: none;
         }
 
     }
@@ -188,6 +195,7 @@
         position: relative;
         left: 30vw;
         width: 70vw;
+        background: #f7f7f7;
 
     }
     .pics1{
@@ -204,9 +212,9 @@
         padding:12px;
     }
     #club{
-        width: 60vw;
+        width: 100%;
         height: 18vw;
-        background: #cccccc;
+        background: #ffffff;
         margin: 0 auto;
     }
     #club div{
@@ -214,6 +222,40 @@
         width: 50%;
         height: 100%;
     }
+    .clubli{
+        list-style: none;
+        padding: 20px 20px;
+    }
+    .clubli1{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    .clubli2{
+        color: rgba(0, 0, 0, 0.56);   
+    }
+    .clubli2 a{
+        text-decoration: none;
+        color: #c8ac6b;
+    }
+    .clubli3 a{
+        text-decoration: none;
+        color: #00A862;
+        padding: 10px 20px;
+        border: 1px solid #00A862;
+        border-radius: 48px;
+    }
+    .clubimg{
+        position: relative;
+    }
+    .clubimg img{
+        width: 236px;
+        height: 72px;
+        transform: translate(-50% -50%);
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+    
     </style>
     <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
@@ -273,6 +315,9 @@
     <div id="container2">
    <div id="pics">
         <img class="pics1" src="./kv-0.jpg" alt="">
+        <img class="pics1" src="./pic2.jpg" alt="">
+        <img class="pics1" src="./pic3.jpg" alt="">
+        <img class="pics1" src="./pic4.jpg" alt="">
         <div class="pics2">   
             <img src="./starbucks-tmall-0108-cn.jpg" alt="">
             <img src="./starbucks-design-studio-web-china.jpg" alt="">
@@ -282,9 +327,9 @@
    <div id="club">
         <div>
             <ul>
-            <li>星享俱乐部</li>
-            <li>开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="">了解更多</a></li>
-            <li>
+            <li class="clubli clubli1">星享俱乐部</li>
+            <li class="clubli clubli2">开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a href="">了解更多</a></li>
+            <li class="clubli clubli3">
                 <div>
                     <span><a href="">注册</a></span>
                     <span><a href="">登录</a></span>
@@ -292,8 +337,8 @@
             </li>
         </ul>
         </div>
-        <div>
-
+        <div class="clubimg">
+            <img src="./logo-msr-new.svg" alt="">
         </div>
    </div>
     </div>

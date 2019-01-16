@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width:  900px;
+        height: 100px;
+        background-color: aquamarine;
+        border: 1px solid black;
+        white-space: nowrap;
+        overflow-y: hidden;
+
+        overflow: hidden;
+
+    }
+    .box{
+        overflow-x: auto;
+        overflow-y: hidden;
+
+    }
+
+    .childrens{
+        display: inline-block;
+
+        margin: 0 10px;
+        width: 150px;
+        height: 100px;
+        background-color: red;
+        margin-bottom: -20px;
+        padding-bottom: 20px;
+
+
+
+    }
+    </style>
+    <script src="./jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+            <div class="childrens"></div>
+        </div>
+        
+        
+        
+    </div>
+    <button class="left">左滑动</button>
+    <button class="right">右滑动</button>
+
+    <video src=""></video>
+    <script>
+    $(".left").click(function(){
+        $(".box").stop(false,false)
+        run('left');
+
+    })
+    $(".right").click(function(){
+        $(".box").stop(false,false)
+        run('right')
+
+    })
+
+    var run = function(dir){
+        var nowleft = $(".box").scrollLeft();
+        var scrollnum = dir=='left'?nowleft-200:nowleft+200;
+        $(".box").animate({
+            scrollLeft: scrollnum
+        },1000,showing())
+    }
+    var showing = function(){
+        var scrollLeft = $(".box").scrollLeft();
+        var clientwidth = $(".box").Width;
+        var scrollwidth = $(".box").get(0).scrollWidth;
+        $(".left").show();
+        $(".right").show();
+        if(scrollLeft ==0){
+            $(".left").hide();
+        }else if(scrollLeft+clientwidth == scrollwidth){
+            $(".right").hide();
+        }
+    }
+    </script>
+</body>
+</html>
