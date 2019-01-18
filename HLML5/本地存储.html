@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    document.cookie = 'test=asdfggh';
+    document.cookie = 'test2=jfdjf';
+    var timer = new Date();
+    timer.setDate(timer.getDate()-1);
+    document.cookie = 'test3=123'
+    document.cookie = 'test2=jfdjf;expires='+timer.toUTCString()
+    console.log(timer);
+    console.log(document.cookie);
+    var setcookie = function(cname,cvalue,exdays){
+        var d = new Date();
+        d.setDate(d.getDate()+1);
+        var expires = 'expires='+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires;
+    }
+    var delcookie(cname)(){
+        var d = new Date();
+        d.setDate(d.getDate()-1);
+        var expires = 'expires='+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires;
+    }
+    setcookie('test5','132465','1');
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #mycanvals{
+            width: 500px;
+            height: 300px;
+            background: black;
+        }
+    </style>
+    <script src="../jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <canvas id="mycanvals" width="1000" height="600">
+
+    </canvas>
+    <script>
+    var ocan = document.getElementById("mycanvals");
+    var context = ocan.getContext("2d");
+
+    ocan.onmousedown = function(e){
+            context.beginPath();
+            context.moveTo(e.clientX*2,e.clientY*2);
+            console.log(e.clientX*2,e.clientY*2);
+            context.strokeStyle = "white";
+            ocan.onmousemove = function(e){
+                context.lineTo(e.clientX*2,e.clientY*2);
+                context.stroke();
+            }
+        }
+        document.onmouseup = function(e){
+            ocan.onmousemove = null;
+        }
+    
+
+    </script>
+</body>
+</html>
