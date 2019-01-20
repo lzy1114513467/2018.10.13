@@ -22,7 +22,7 @@
         var expires = 'expires='+d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires;
     }
-    var delcookie(cname)(){
+    var delcookie = function(cname){
         var d = new Date();
         d.setDate(d.getDate()-1);
         var expires = 'expires='+d.toUTCString();

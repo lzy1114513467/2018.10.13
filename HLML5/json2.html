@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj1 = {
+        name:"小红",
+        age:"20"
+    }
+    var obj2 = {}
+    // var obj2 = obj1;
+    // obj1.name = "小明"
+    // console.log(obj2.name);
+    for(var item in obj1){
+        obj2[item] = obj1[item]
+    }
+    obj1.name = "xioamih";
+    console.log(obj2);
+    </script>
+</body>
+</html>
