@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*第一步创建对象*/
+    var xmlhttp;
+    if(window.xmlhttpRequest)
+    {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else
+    {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    //发送请求
+    xmlhttp.open("GET","./a.json",true);
+    xmlhttp.send();
+    //请求回调
+    </script>
+</body>
+</html>
