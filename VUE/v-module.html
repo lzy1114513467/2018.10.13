@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <select name="" id="">
+            <option value="" v-for="(item,index) in school" :key="index">{{school}}</option>
+        </select>
+        
+        <h1>{{msg}}</h1>
+    </div>
+
+
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            school:["黑的","李丹","农大","理工"]
+        }
+    })    
+    </script>
+</body>
+</html>

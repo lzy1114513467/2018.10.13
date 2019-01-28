@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .div1{
+        height: 200px;
+        width: 200px;
+        background: red;
+
+    }
+    .div2{
+        height: 500px;
+       
+        width: 500px;
+         background: red;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="div1" @click = "div1click">
+                <div class="div2" @click = "div2click">
+
+                </div>
+            </div>
+            <a href="www.baidu.com"></a>
+    </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            methods:{
+                div1click(){
+                    console.log("div1");
+                    
+                },
+                div2click(){
+                    console.log("div2");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

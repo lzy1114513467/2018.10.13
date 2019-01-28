@@ -10,17 +10,31 @@ module.exports = {
     },
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:"[name].js"
+        filename:"[name].js",
+        publicPath:"http://127.0.0.1:8081/"
     },
     module:{
         rules:[
             {
                 test:/\.css$/,
-                use:['style-loader','css-loader']
+                use:ExtractTextPlugin.extract({
+                    fallback:"style-loader",
+                    use:"css-loader"
+                })
+            },
+            {test:/\.(png|jpg|gif)$/,
+                use:[{
+                loader:'url-loader',
+                option:{
+                    limit:500,
+                    outputpath:'./img/'
+                }
+            }]
+        },{
+            test:/\.(html|htm)/i,
+            loader:'html-withing-loader'
             }
-        ]
-        
-        
+        ]                
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
@@ -30,7 +44,8 @@ module.exports = {
             },
             hash:true,
             template:'./src/index.html'
-        })
+        }),
+        new ExtractTextPlugin("./css/main.css"),
     ],
 
     devServer:{
