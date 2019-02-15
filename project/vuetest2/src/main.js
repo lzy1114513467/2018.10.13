@@ -1,9 +1,10 @@
-import Vue from 'vue'
+import Vue from 'vue'     /*入口js*/
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-
+import '@/assets/js/rem.js'
+import '@/assets/css/reset.css'
 Vue.config.productionTip = false
 
 new Vue({
