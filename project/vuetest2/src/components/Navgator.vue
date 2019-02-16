@@ -3,7 +3,7 @@
         <!-- <h1>导航</h1> -->
         <header>
             <span @click="routerpush(btnlist[0])">首页</span>
-            <h1>{{activetitle}}</h1>
+            <h2>{{propsval}}</h2>
         </header>
         <nav>
             <ul>
@@ -48,6 +48,7 @@ export default {
             ]
         }
     },
+    props:['navval'],
     methods: {
         routerpush(obj){
             this.$router.push(obj.routerPath);
@@ -55,6 +56,18 @@ export default {
             this.activeclass= obj.classname
 
         }
+    },
+    computed: {
+        propsval(){
+            return this.navval.title;
+        }
+    },
+    watch: {
+        propsval(){
+             this.activeclass = this.navval.classname;
+             this.activetitle = this.navval.title 
+        }
+       
     },
 }
 </script>
@@ -99,6 +112,10 @@ export default {
         float: left;
         width: 25vw;
         line-height: 1rem;
+        text-align: center;
+    }
+    h2{
+        text-align: center;
     }
     nav li.active{
         color: #fff;

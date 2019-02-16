@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <!-- 组件的表现形式就是一个标签  所以这儿用一个标签 -->
-      <navgator  />        
+      <navgator :navval="activenav " />        
       <!-- <router-link to="/">Home</router-link> | -->
       <!-- <router-link to="/about">About</router-link> -->
       <!-- <router-link to="@/components/Navgator">123</router-link> -->
@@ -27,7 +27,8 @@ export default {
   },
   methods:{
     change(obj){
-
+      this.activenav.title = obj.title;
+      this.activenav.classname = obj.classname;
     }
   },
   components:{
@@ -38,10 +39,7 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 1rem 0; 
 }
 </style>

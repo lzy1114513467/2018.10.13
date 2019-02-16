@@ -9,18 +9,18 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: Home
+    // },
     // {
     //   path: '../components/Navagator.vue',
     //   name: 'navgator',
     //   component:()=>import('@/views/movie/Movie.vue')
     // },
     {
-      path: '/movie',
+      path: '/',
       name: 'movie',
       component:()=>import('@/views/movie/Movie.vue')
       
