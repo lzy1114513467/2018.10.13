@@ -38,11 +38,11 @@ export default {
             let proxy = 'https://bird.ioliu.cn/v2?url='
             let url = 'https://api.ai.qq.com/fcgi-bin/nlp/nlp_textchat'
             let params = {
-                app_id:"",
-                time_stamp:"",
-                nonce_str:this.getnoncestr(),
+                app_id:"2111983021",
+                time_stamp:"",  //时间戳
+                nonce_str:this.getnoncestr(),//随机字符串
                 sign:"",
-                session:"",
+                session:"",     
                 question:""
 
             }
