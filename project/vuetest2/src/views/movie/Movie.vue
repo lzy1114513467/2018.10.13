@@ -2,7 +2,7 @@
 <div class="head">
     <h1>
       <ul>
-        <li class="item-list clearfix" v-for="(item,index) in movies" :key="index">
+        <li class="item-list clearfix" v-for="(item,index) in movies" :key="index" @click="godetail(item.id)">
           <div class="list-left">
             <img :src="item.cover.url" alt="">
           </div>
@@ -61,6 +61,9 @@ export default {
       .catch((res)=>{
         console.log('失败')
       })
+      },
+      godetail(id){
+        this.$router.push({name:"moviedetail",params:{movieId:id}})
       }
     },
 }

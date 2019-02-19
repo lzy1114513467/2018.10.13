@@ -43,6 +43,11 @@ export default new Router({
       component:()=>import('@/views/talk/Talk.vue')
       
     }, 
+    {
+      path:'/moviedetail',
+      name:'moviedetail',
+      component:()=>import('@/views/movie/Moviedetail.vue')
+    },
 
    {
       path:'*',
