@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../react.production.min.js"></script>    
+    <script src="../react-dom.production.min.js"></script>
+    <script src="../browser.min.js"></script>
+
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+        class All extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    stata:100
+                }                
+            }
+            
+
+            changeD(){
+                this.setState({
+                    count:this.state.count-num
+                })
+            }
+            changeF(){
+
+            }
+            render(){
+                return(
+                    <div>
+                        <h1> 全部士兵数量{}</h1>
+                        <CaptainA changeC={this.changeD}/>
+                        <CaptainB changeE={this.changeF}/>
+                    </div>
+                )
+            }
+        }
+        class CaptainA extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count:100
+                
+                }
+                this.changeC=this.changeC.bind(this)
+            }
+            add(num){
+                this.setState({
+                    count:this.state.count+num
+                })
+            }
+            changeC(num){
+                this.setState({
+                    count:this.state.count-num
+                })
+            }
+            render(){
+                return(
+                    <div>
+                    <h3>将军A中有士兵数量：{this.state.count}</h3>    
+                    <button onClick = {this.add.bind(this,10)}>调兵</button>
+                    </div>
+                )
+            }
+        }
+        class CaptainB extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    count:100
+                    this.changeE=this.changeE.bind(this)
+                
+                }
+            }
+            add(num){
+                this.setState({
+                    count:this.state.count+num
+                })
+            }
+            changeE(num){
+                this.setState({
+                    count:this.state.count-num
+            })
+            render(){
+                return(
+                    <div>
+                    <h3>将军B中有士兵数量：{this.state.count}</h3>    
+                    <button onClick = {this.add.bind(this,10)}>调兵</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            el,
+            document.getElementById("root")
+
+        )
+    </script>
+</body>
+</html>

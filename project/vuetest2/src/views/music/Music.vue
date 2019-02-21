@@ -1,6 +1,6 @@
 <template>
 <div>
-  <aplayer v-if="isShow" :music="musiclist[0]" :list="musiclist"/>
+  <aplayer v-if="isShow" autoplay :music="musiclist[0]" :list="musiclist" :showLrc="true"/>
 </div>
    
 </template>
@@ -31,8 +31,12 @@ export default {
         getdata(){
              Axios.get("./data/musicdata.json")
              .then((res)=>{
+                //  console.log(res);
                  let arr = res.data.musicData;
-                 this.musicList = arr;
+                 arr.forEach((element,index) => {
+                arr[index].lrc=location.origin+location.pathname+element.lrc
+                 });
+                 this.musiclist = arr;
                  this.isShow = true  
              })
         }
