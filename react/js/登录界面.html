@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../react.production.min.js"></script>    
+    <script src="../react-dom.production.min.js"></script>
+    <script src="../browser.min.js"></script>
+    <style>
+    .active{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+    class Family extends React.Component{
+        constructor(props){
+            super(props);
+        }
+        render(){
+            return(
+                <div>
+                <ChildrenLog/>
+                <ChildrenReg/>
+                </div>
+            )
+        }
+    }
+    class ChildrenLog extends React.Component{
+        constructor(props){
+            super(props);
+        }
+        render(){
+            return (
+                <div>
+                <button>登录</button>
+                </div>
+            )
+        }
+    }
+    class ChildrenReg extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                cName:"active"
+            }
+        }
+        changeshow(){
+            
+        }
+        render(){
+            return (
+                <div>
+                <button onClick={this.changeshow.bind(this)} className={this.state.cName}>注册</button>                
+                </div>
+            )
+        }
+    }
+    class Page extends React.Component{
+        constructor(props){
+            super(props);
+        }
+        render(){
+            return (
+                <div>
+                <h3>登录</h3>
+                <h3>X</h3>
+                <h1>登录</h1>
+                </div>
+            )
+        }
+    }
+        ReactDOM.render(
+            <Family/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

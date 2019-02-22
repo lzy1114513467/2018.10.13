@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="../react.production.min.js"></script>
+    <script src="../react-dom.production.min.js"></script>
+    <script src="../browser.min.js"></script>
+    <style>
+    .btn-primary{
+      float: right;
+      margin-top: -50px;
+      margin-right: 180px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+    <script type="text/babel">
+      class Form extends React.Component{
+          constructor (props){
+              super(props);
+          }
+          render(){
+            return(  <div>
+            <form class="top">
+            <input type="text" value="" placeholder="待办事项"/>
+            <span>     </span>
+            <input type="date" value="" />
+            <span>     </span>
+            <input type="text" value=""placeholder="待办用时"/>
+            </form><br/>
+            <button type="button" class="btn btn-primary">Primary</button>
+
+                <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+                  <input type="checkbox"/> 
+            </th> 
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">
+                    <input type="checkbox"/>             
+            </th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">
+               <input type="checkbox"/>             
+            </th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>  
+      </table>
+      <button type="button" class="btn btn-warning">删除选中</button>
+
+              </div>
+            )
+      }
+      }
+      class Delete extends React.Component{
+        
+      }
+      ReactDOM.render(
+          <Form/>,
+          document.getElementById("root")
+      )
+      </script>
+</body>
+
+</html>
