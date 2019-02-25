@@ -17,6 +17,9 @@
       margin-top: -50px;
       margin-right: 180px;
     }
+    .active{
+      display: none
+    }
     </style>
 </head>
 
@@ -29,9 +32,17 @@
       class Form extends React.Component{
           constructor (props){
               super(props);
+              this.state={
+                cName:"" 
+              }
+          }
+          fdelete(){
+            this.setState({
+              cName:"active"
+            })
           }
           render(){
-            return(  <div>
+            return(  <div class="container">
             <form class="top">
             <input type="text" value="" placeholder="待办事项"/>
             <span>     </span>
@@ -39,52 +50,98 @@
             <span>     </span>
             <input type="text" value=""placeholder="待办用时"/>
             </form><br/>
-            <button type="button" class="btn btn-primary">Primary</button>
+            <Add/>
 
                 <table class="table">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">待办事项</th>
+            <th scope="col">待办时间</th>
+            <th scope="col">预计用时</th>
+            <th scope="col">操作</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr className={this.state.cName}>
             <th scope="row">
                   <input type="checkbox"/> 
             </th> 
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
+            <td>2</td>
+            <td>
+              <Delete cdelete={this.fdelete.bind(this)}/>
+            </td>
           </tr>
-          <tr>
+          <tr className={this.state.cName}>
             <th scope="row">
                     <input type="checkbox"/>             
             </th>
             <td>Jacob</td>
             <td>Thornton</td>
-            <td>@fat</td>
+            <td>2</td>
+            <td>
+              <Delete cdelete={this.fdelete.bind(this)}/>
+            </td>
           </tr>
-          <tr>
+          <tr className={this.state.cName}>
             <th scope="row">
                <input type="checkbox"/>             
             </th>
             <td>Larry</td>
             <td>the Bird</td>
-            <td>@twitter</td>
+            <td>2</td>
+            <td>
+              <Delete delete={this.fdelete.bind(this)}/>
+            </td>
           </tr>
         </tbody>  
       </table>
-      <button type="button" class="btn btn-warning">删除选中</button>
-
-              </div>
+          <DeleteAll/>
+            </div>
             )
       }
       }
       class Delete extends React.Component{
-        
+         constructor(props){
+           super(props);
+         }
+         delete(){
+          this.props.cdelete()
+         }
+         render(){
+           return (
+             <div>
+              <button type="button" class="btn btn-danger" onClick={this.delete.bind(this)}>删除</button>
+             </div>
+           )
+         }
+      }
+      class DeleteAll extends React.Component{
+         constructor(props){
+           super(props);
+         }
+         render(){
+           return(
+             <div>
+            <button type="button" class="btn btn-warning">删除选中</button>
+           </div>
+           )
+           
+         }
+      }
+      class Add extends React.Component{
+         constructor(props){
+           super(props);
+         }  
+         render(){
+           return(
+             <div>
+              <button type="button" class="btn btn-primary">添加</button>
+             </div>
+           )
+         }
       }
       ReactDOM.render(
           <Form/>,
