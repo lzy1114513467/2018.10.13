@@ -7,15 +7,15 @@ import	{
     BrowserRouter as	Router,	
     Route,	
     Link,
-
+    Switch,
   }	from	"react-router-dom";
-
+import {Provider} from 'react-redux'
+import store from './stroe'
   const Test = ({match})=>{
    console.log(match.params.id);
    
    return (
     <div>
-      
       <h1>这是一个测试组件</h1>
     </div>
   )
@@ -24,19 +24,26 @@ class App extends Component {
   render() {  
     return (
       <div className="App">
-        <Router>
-          <div>
+      <Provider store={store}>
+          <Router>
+             <div> 
             <Link to='/'>Class1</Link>|
             <Link to='/test/101'>test</Link>|
-            <Link to='/class2'>Class2</Link>
+            <Link to='/class2/110'>Class2</Link>|
             <Link to='/class3'>Class3</Link>
-            
+            <Switch>
             <Route path={'/test/:id'} component={Test}/>
-            <Route path={'/class2'} component={Class2}/>         
+            <Route path={'/class2/:id'} component={Class2}/>         
+            <Route exact path={'/class3'} component={Class3}/>
             <Route path={'/'} component={Class1}/>
-            
-          </div>
-        </Router>
+            </Switch>
+            </div>
+             </Router>
+              
+      </Provider>
+       
+          
+
          
       </div>
     );
