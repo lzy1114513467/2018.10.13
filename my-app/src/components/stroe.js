@@ -1,9 +1,9 @@
-import {createStore} from 'rudex'
+// import {createStore} from 'rudex'
 
-const initialState = {
-    count:0
-}
+// const initialState = {
+//     count:0
+// }
 
-let store = createStore(()=>{},initialState)
+// let store = createStore(()=>{},initialState)
 
-export default store;
+// export default store;
