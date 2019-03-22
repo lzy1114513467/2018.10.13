@@ -1,0 +1,14 @@
+{
+  "main": "./lib/index.js",
+  "name": "my_package",
+  "version": "1.0.0",
+  "description": "this test",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }, 
+  "author": "mrliu",
+  "license": "ISC"
+}
